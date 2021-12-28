@@ -12,43 +12,27 @@ if [ `expr $number % 2` == 0 ]
 then
 	echo "Value not perfect"
 else
-    i=1
-    rowmid = $number / 2
-    start = $number / 2   
-    end = $number / 2
+    i= 0
+    spaceCount = 0
     
     while [ $i -le $number ]
     do
-    
-    if [ $i -le $rowmid ]
-    then
-        j = 0   
-        while [ $j -l $number ]    
+        j = $number
+        while [ $j -g 0 ]    
         do
-            if [ $j -lt $start] || [$j -gt $end]
+            if [ [$j - $i] -g $number ]
             then
                 echo " "
             else
                 echo "*"
             fi
-            ((j++))
+            ((j--))
         done
-    else
-        j = 0
-        while [ $j -l $number ]    
-        do
-            if [ $j -lt $start] || [$j -gt $end]
-            then
-                echo "*"
-            else
-                echo " "
-            fi
-            ((j++))
-        done   
-    fi
-
-    ((start--))
-    ((end++))
+# ****
+# ***
+# **
+# *   
+        echo -e "\n" 
     ((i++))
     done
 fi
